@@ -3,10 +3,10 @@ import React from 'react'
 export default function Row(props) {
     return (
         <tr>
-            <td>{props.position}</td>
-            <td style={style.teamName}>
-                <div >
-                    <img style={style.image} src={props.crestURI} alt="emblem"/>
+            <td className="team-position">{props.position}</td>
+            <td className="team-name">
+                <div className="crest">
+                    <img src={props.crestURI} alt=""/>
                 </div>
                 {props.teamName}
             </td>
@@ -17,23 +17,9 @@ export default function Row(props) {
             <td>{props.goalsFor}</td>
             <td>{props.goalsAgainst}</td>
             <td>{props.goalDifference}</td>
-            <td>{props.points}</td>
+            <td className="team-points">{props.points}</td>
         </tr>
     )
 }
 
-const style = {
-    teamName : {
-        width: '250px',
-        textAlign: 'left',
-        display: 'flex',
-        alignItems: 'center'
-    },
-    image: {
-        width: '30px',
-        height: '30px',
-        marginRight: '10px',
-        display: 'flex',
-        justifyContent: 'center'
-    }
-}
+

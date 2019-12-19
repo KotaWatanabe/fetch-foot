@@ -5,6 +5,7 @@ import Row from './components/Row';
 import TableFrame from './components/TableFrame';
 import Toggle from './components/Toggle'
 import Header from './components/Header'
+import LeagueInfo from './components/LeagueInfo'
 
 class App extends Component {
 
@@ -71,9 +72,12 @@ class App extends Component {
         <Header>
           {this.state.leagueToggle}
         </Header>
-        <TableFrame>
-          {this.state.teams}
-        </TableFrame>
+        <div className="container">
+          <LeagueInfo leagueName={this.state.leagueName} />
+          <TableFrame>
+            {this.state.teams}
+          </TableFrame>
+        </div>
       </div>
     );
   }
