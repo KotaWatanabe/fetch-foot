@@ -8,13 +8,14 @@
 
 header{
   padding: 1.2em 0;
+  display: flex;
+  justify-content: space-around;
 }
 
 header button{
   margin-right: 15px;
   border: none;
   border-radius: 2px;
-  display: inline-block;
   height: 36px;
   line-height: 36px;
   padding: 0 2rem;
@@ -46,6 +47,7 @@ header button:active{
 
 .container{
   display: flex;
+  /* justify-content: space-around; */
 }
 .league-info{
   margin-bottom: 1.2em;
