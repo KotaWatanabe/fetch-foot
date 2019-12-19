@@ -3,6 +3,8 @@ import './App.css';
 import axios from 'axios';
 import Row from './components/Row';
 import TableFrame from './components/TableFrame';
+import Toggle from './components/Toggle'
+import Header from './components/Header'
 
 class App extends Component {
 
@@ -20,12 +22,21 @@ class App extends Component {
     teams:[],
     leagueToggle:[]
   }
+  
+
+  leagueToggle = (e) => {
+    const leagueId = e.target.getAttribute('data-leagueid');
+    this.setState({
+      leagueId
+    }, () => { this.fetchData() });
+  }
 
   fetchData() {
     const Token = "e21e1a03eec449d1871d75d5e042ec4f";
-    const teams = [];
-    axios.get(`https://api.football-data.org/v2/competitions/PL/standings`, { headers: { 'X-Auth-Token': Token }})
+    let leagueId = this.state.leagueId
+    axios.get(`https://api.football-data.org/v2/competitions/${leagueId}/standings`, { headers: { 'X-Auth-Token': Token }})
     .then(res => { 
+      const teams = [];
       res.data.standings[0].table.map((data, index) => {
         const { position, playedGames, won, draw, lost, goalsFor, goalsAgainst, goalDifference, points } = data;
         const { name, crestUrl } = data.team;
@@ -46,12 +57,20 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.fetchData()
+    this.fetchData();
+    for (let key in this.state.leagueNames) {
+      this.state.leagueToggle.push(
+        <Toggle leagueToggle={this.leagueToggle} key={this.state.leagueNames[key]} leagueId={this.state.leagueNames[key]} text={key} />
+      )
+    }
   }
 
   render() {
     return (
       <div className="App">
+        <Header>
+          {this.state.leagueToggle}
+        </Header>
         <TableFrame>
           {this.state.teams}
         </TableFrame>

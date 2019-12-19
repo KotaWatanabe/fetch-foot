@@ -1,7 +1,5 @@
 import React from 'react'
 
-{/* <Row key={index} position={position} crestURI={crestUrl} teamName={name} playedGames={playedGames} wins={won} draws={draw} losses={lost} goalsFor={goalsFor} goalsAgainst={goalsAgainst} goalDifference={goalDifference} points={points} /> */}
-
 export default function Row(props) {
     return (
         <tr>
