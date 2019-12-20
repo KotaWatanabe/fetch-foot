@@ -4,11 +4,11 @@ export default function Row(props) {
     return (
         <tr>
             <td className="team-position">{props.position}</td>
-            <td className="team-name">
+            <td  className="team-name">
                 <div className="crest">
                     <img src={props.crestURI} alt=""/>
                 </div>
-                {props.teamName}
+                <a href="#" onClick={props.showLatest} data-teamid={props.teamId} >{props.teamName}</a>
             </td>
             <td>{props.playedGames}</td>
             <td>{props.wins}</td>

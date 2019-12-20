@@ -3,7 +3,6 @@
   font-family: 'Roboto', sans-serif;
   max-width: 940px;
   margin: 0 auto;
-
 }
 
 header{
@@ -45,16 +44,34 @@ header button:active{
   outline: 0;
 }
 
+.stats{
+  display:'flex';
+  justify-content:center;
+  color:#fff;
+  width:100%
+}
+
+/* .stats-head .stats-body{
+  padding:5px
+} */
+
+.stats-away, .stats-home{
+  border: 1px solid  #fff;
+  width:50%
+}
+
 .container{
   display: flex;
   /* justify-content: space-around; */
 }
 .league-info{
-  margin-bottom: 1.2em;
-  align-self: center;
+  margin: 1.2em;
+  /* align-self: center; */
+  text-align:center;
+  flex:1
 }
 
-.league-info h1{
+/* .league-info h1{
   font-size: 1.8em;
   font-weight: 400;
   margin: 0 0 .5em;
@@ -62,12 +79,13 @@ header button:active{
 .league-info span{
   margin-bottom: 10px;
   display: block;
-}
+} */
 
 .standings{
   margin: 0 auto;
   border-collapse: collapse;
   color:  #fff; 
+  flex:3
 }
 
 .standings .table-head,
@@ -97,6 +115,11 @@ header button:active{
   text-align: left;
   display: flex;
   align-items: center;
+}
+
+.standings .team-name a{
+  color:#fff;
+  text-decoration:none
 }
 
 .crest{
