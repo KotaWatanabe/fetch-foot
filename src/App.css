@@ -1,31 +1,31 @@
 .App {
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  max-width: 940px;
+  max-width:100vh;
+  max-height:100vh;
   margin: 0 auto;
 }
 
 header{
-  padding: 1.2em 0;
+  padding: 1.2em 1em;
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 header button{
-  margin-right: 15px;
+  margin-right: 4px;
+  margin-bottom:2px;
   border: none;
   border-radius: 2px;
-  height: 36px;
-  line-height: 36px;
-  padding: 0 2rem;
+  height: 30px;
+  line-height: 15px;
+  padding: 0 1rem;
   text-transform: uppercase;
   vertical-align: middle;
   -webkit-tap-highlight-color: transparent;
   color: #fff;
   background-color: #26a69a;
   text-align: center;
-  letter-spacing: .5px;
-  overflow: hidden;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -34,6 +34,7 @@ header button{
   vertical-align: middle;
   -webkit-transition: .2s ease-out;
   transition: .2s ease-out;
+  font-size:8px
 }
 
 header button:hover,
@@ -44,48 +45,39 @@ header button:active{
   outline: 0;
 }
 
+.container{
+  padding:5px;
+}
+
+.league-info{
+  display:flex;
+  text-align:center;
+  flex-direction:column;
+  font-size:12px;
+  justify-content:flex-start;
+  align-items:center
+}
+.league-info img{
+  height:50px;
+  width:100px
+}
+
 .stats{
-  display:'flex';
-  justify-content:center;
+  text-align:center;
   color:#fff;
   width:100%
 }
-
-/* .stats-head .stats-body{
-  padding:5px
-} */
 
 .stats-away, .stats-home{
   border: 1px solid  #fff;
   width:50%
 }
 
-.container{
-  display: flex;
-  /* justify-content: space-around; */
-}
-.league-info{
-  margin: 1.2em;
-  /* align-self: center; */
-  text-align:center;
-  flex:1
-}
-
-/* .league-info h1{
-  font-size: 1.8em;
-  font-weight: 400;
-  margin: 0 0 .5em;
-}
-.league-info span{
-  margin-bottom: 10px;
-  display: block;
-} */
-
 .standings{
-  margin: 0 auto;
   border-collapse: collapse;
+  margin: 0 auto;
   color:  #fff; 
-  flex:3
+  font-size:10px
 }
 
 .standings .table-head,
@@ -111,7 +103,7 @@ header button:active{
 }
 
 .standings .team-name{
-  width: 250px;
+  width: 160px;
   text-align: left;
   display: flex;
   align-items: center;
@@ -123,19 +115,93 @@ header button:active{
 }
 
 .crest{
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
   display: flex;
   justify-content: center;
 }
 
 .crest img{
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 85%;
+  max-height: 85%;
 }
 
 .standings .team-points{
   font-weight: bold;
 }
 
+/* Desk Top */
+
+@media (min-width: 600px) {
+  .App {
+    max-width: 940px;
+  }
+
+  header{
+    padding: 1.2em 0;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom:0;
+  }
+
+  header button{
+    margin-right: 15px;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 2rem;
+    letter-spacing: .5px;
+    overflow: hidden;
+  }
+
+  .container{
+    display: flex;
+    /* justify-content: space-around; */
+  }
+
+  .league-info{
+    margin: 1.2em;
+    /* align-self: center; */
+    text-align:center;
+    flex:1;
+    font-size:16px
+  }
+
+  .league-info img{
+    height:200px;
+    width:300px
+  }
+
+  .stats{
+    display:'flex';
+    justify-content:center;
+    width:100%
+  }
+
+  .standings{
+    margin: 0 auto;
+    flex:3;
+    font-size:16px;
+  }
+
+  .standings td{
+    width: 35px;
+  }
+
+  .standings .team-name{
+    width: 250px;
+  }
+  
+  .crest{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .crest img{
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
